@@ -1,0 +1,16 @@
+<template name="Pages_Main_Steps_Container">
+    <ul class="steps">
+        <li id="Step1"><span>1. {{{_ "pages.order.steps_container.step_1"}}}</span></li>
+        <li id="Step2"><span>2. {{{_ "pages.order.steps_container.step_2"}}}</span></li>
+        <li id="Step3"><span>3. {{{_ "pages.order.steps_container.step_3"}}}</span></li>
+        <li id="Step4"><span>4. {{{_ "pages.order.steps_container.step_4"}}}</span></li>
+        <li id="Step5"><span>5. {{{_ "pages.order.steps_container.step_5"}}}</span></li>
+        <li id="Step6"><span>5. {{{_ "pages.order.steps_container.step_6"}}}</span></li>
+    </ul>
+    {{> Template.dynamic template=getCurrentStep}}
+    {{#unless lastStep}}
+        <div class="back-section">
+            <button class="button-default back-btn">{{{_ "back"}}}</button>
+        </div>
+    {{/unless}}
+</template>

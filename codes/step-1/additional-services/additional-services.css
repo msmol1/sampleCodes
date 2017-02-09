@@ -1,0 +1,30 @@
+input {
+  margin-top: 0px;
+}
+input::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+  background: #08FB36;
+  border: 2px solid black;
+  cursor: pointer;
+}
+input:checked::after {
+  content: "\2713";
+  color: black;
+  position: absolute;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 2px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+#additionalServices {
+  font-size: 13px;
+}
+.list-group-item {
+  display: none;
+}

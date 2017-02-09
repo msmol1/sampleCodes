@@ -1,0 +1,38 @@
+<template name="Pages_Cart_Step1">
+    <p>{{{_ "pages.shop.cart.name"}}}</p>
+    {{#if Template.subscriptionsReady}}
+        {{#if anyProductInCart}}
+            {{> Pages_Cart_Products}}
+            {{#if additionalServices}}
+                {{> Pages_Cart_AdditionalServices}}
+            {{/if}}
+            {{#if currentUser}}
+                <button class="button-default button-arrow submit-button pull-right"
+                        id="go-to-payment-form">{{{_ "pages.shop.cart.go_to_payment"}}}</button>
+            {{else}}
+                <div class="col-md-12">
+                    <small>{{{_ "pages.shop.cart.question"}}}</small>
+                    <br/>
+                </div>
+                <div class="col-md-12">
+                    <button class="button-default button-arrow submit-button pull-left" id="go-to-login">
+                        {{{_ "login"}}}
+                    </button>
+                    <button class="button-default button-arrow submit-button pull-right" id="go-to-payment-form">
+                        {{{_ "pages.shop.cart.go_to_registration"}}}
+                    </button>
+                </div>
+            {{/if}}
+        {{else}}
+            <div class="communique">
+                <h4>{{{_ "pages.shop.cart.empty1"}}}.</h4>
+                {{#unless currentUser}}
+                    <small>{{{_ "pages.shop.cart.empty2"}}}.</small><br/>
+                    <button class="button-default button-arrow submit-button" id="go-to-login">
+                        {{{_ "login"}}}
+                    </button>
+                {{/unless}}
+            </div>
+        {{/if}}
+    {{/if}}
+</template>

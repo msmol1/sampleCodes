@@ -1,0 +1,14 @@
+<template name="Pages_Cart_AdditionalServices">
+    <div id="additionalServices">
+        {{#autoForm id="autoform-main-user-cart-additionalServices"
+        schema=$FormSchemas.Main.AdditionalServices
+        type="method"
+        doc=formDoc
+        meteormethod = "main.order.orderAdditionalServices"
+        }}
+            {{> afQuickField name="products" formgroup-class="col-md-12 col-sm-12 col-xs-12" formgroup-class="hidden"}}
+            {{> afQuickField name="content" formgroup-class="col-md-12 col-sm-12 col-xs-12" options=options}}
+            <button style="visibility: hidden;" type="submit" id="additionalServices_submit_hidden"> Sub</button>
+        {{/autoForm}}
+    </div>
+</template>
